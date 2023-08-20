@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="key1" class="XMLMap.MyKey">
+        <constructor-arg value="1"/>
+    </bean>
+    <bean id="key2" class="XMLMap.MyKey">
+        <constructor-arg value="2"/>
+    </bean>
+    <bean id="key3" class="XMLMap.MyKey">
+        <constructor-arg value="3"/>
+    </bean>
+    <bean id="key4" class="XMLMap.MyKey">
+    <constructor-arg value="4"/>
+    </bean>
+
+
+    <bean id="result1" class="XMLMap.MySrting">
+        <constructor-arg value="One"/>
+    </bean>
+    <bean id="result2" class="XMLMap.MySrting">
+        <constructor-arg value="Two"/>
+    </bean>
+    <bean id="result3" class="XMLMap.MySrting">
+        <constructor-arg value="Three"/>
+    </bean>
+    <bean id="result4" class="XMLMap.MySrting">
+        <constructor-arg value="Four"/>
+    </bean>
+
+    <util:map id="map" key-type="XMLMap.MyKey"  value-type="XMLMap.MySrting" scope="singleton" map-class="java.util.HashMap">
+        <entry key-ref="key1" value-ref="result1"/>
+        <entry key-ref="key2" value-ref="result2"/>
+        <entry key-ref="key3" value-ref="result3"/>
+        <entry key-ref="key4" value-ref="result4"/>
+    </util:map>
+</beans>
